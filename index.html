@@ -122,12 +122,27 @@
 
           <div className="space-y-3">
             
-            {/* 🌟 完美的圖片顯示區塊 */}
+            {/* 🌟 完美的圖片顯示區塊 (S13U) */}
             {selectedModel === 'S13U' && (
               <div className="bg-white p-3 rounded-2xl shadow-sm border border-pink-50 flex justify-center items-center mb-2">
                 <img 
                   src="17.png" 
                   alt="S13U 五道式 RO逆滲透" 
+                  className="w-full h-auto max-h-48 object-contain rounded-lg drop-shadow-sm"
+                  onError={(e) => { 
+                    /* 如果找不到圖片，就把整個白框框藏起來 */
+                    e.target.parentNode.style.display = 'none'; 
+                  }} 
+                />
+              </div>
+            )}
+
+            {/* 🌟 新增：完美的圖片顯示區塊 (DF400) */}
+            {selectedModel === 'DF400' && (
+              <div className="bg-white p-3 rounded-2xl shadow-sm border border-pink-50 flex justify-center items-center mb-2">
+                <img 
+                  src="DF-400.jpg" 
+                  alt="DF400 淨水器" 
                   className="w-full h-auto max-h-48 object-contain rounded-lg drop-shadow-sm"
                   onError={(e) => { 
                     /* 如果找不到圖片，就把整個白框框藏起來 */
