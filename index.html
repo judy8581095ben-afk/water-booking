@@ -167,7 +167,12 @@
     }
 
     function NoticeContent() {
-      const notices = ['為了提供最完善的服務，保養請提早至少 3 天預約喔！', '若臨時有事需要更改時間，請於前一日告知我們 ♡', '技師到府前會先以電話聯繫，請留意手機。', '服務過程約需 30-60 分鐘。'];
+      const notices = [
+        '為了提供最完善的服務，保養請提早至少 3 天預約喔！', 
+        '若臨時有事需要更改時間，請於前一日告知我們 ♡', 
+        '技師到府前會先以電話聯繫，請留意手機。', 
+        '希望預約時間重疊或無法前往會另外通知聯絡(建議以平日上班時間早上9點至晚上7點)'
+      ];
       return (
         <div className="animate-[fadeIn_0.5s_ease-out] h-full flex flex-col">
           <h2 className="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-400"></span>預約小叮嚀</h2>
