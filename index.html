@@ -116,7 +116,7 @@
           </h2>
           
           <div className="flex bg-pink-50/50 p-1 rounded-xl mb-4">
-            <button onClick={() => setSelectedModel('S13U')} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedModel === 'S13U' ? 'bg-white text-pink-500 shadow-sm' : 'text-gray-400 hover:text-pink-400'}`}>S13U 五道式</button>
+            <button onClick={() => setSelectedModel('S13U')} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedModel === 'S13U' ? 'bg-white text-pink-500 shadow-sm' : 'text-gray-400 hover:text-pink-400'}`}>五道式Ro逆滲透</button>
             <button onClick={() => setSelectedModel('DF400')} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedModel === 'DF400' ? 'bg-white text-pink-500 shadow-sm' : 'text-gray-400 hover:text-pink-400'}`}>DF400</button>
           </div>
 
@@ -127,7 +127,7 @@
               <div className="bg-white p-3 rounded-2xl shadow-sm border border-pink-50 flex justify-center items-center mb-2">
                 <img 
                   src="17.png" 
-                  alt="S13U 五道式 RO逆滲透" 
+                  alt="五道式Ro逆滲透" 
                   className="w-full h-auto max-h-48 object-contain rounded-lg drop-shadow-sm"
                   onError={(e) => { 
                     /* 如果找不到圖片，就把整個白框框藏起來 */
@@ -280,7 +280,7 @@
             <input name="address" value={formData.address} onChange={handleChange} type="text" required placeholder="服務地址" className="w-full px-4 py-3 rounded-xl bg-gray-50 border-none text-sm focus:ring-2 focus:ring-pink-300 outline-none" />
             <select name="model" value={formData.model} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl bg-gray-50 border-none text-sm text-gray-600 focus:ring-2 focus:ring-pink-300 outline-none appearance-none cursor-pointer">
               <option value="" disabled>請選擇您的機器型號</option>
-              <option value="S13U 五道式 RO逆滲透">S13U 五道式 RO逆滲透</option>
+              <option value="五道式Ro逆滲透">五道式Ro逆滲透</option>
               <option value="DF400+">DF400+</option>
               <option value="其他機型 / 不確定">其他機型 / 不確定</option>
             </select>
