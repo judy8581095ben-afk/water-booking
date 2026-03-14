@@ -119,6 +119,18 @@
             <button onClick={() => setSelectedModel('DF400')} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedModel === 'DF400' ? 'bg-white text-pink-500 shadow-sm' : 'text-gray-400 hover:text-pink-400'}`}>DF400</button>
           </div>
           <div className="space-y-3">
+            {selectedModel === 'S13U' && (
+  <div className="bg-white p-3 rounded-2xl shadow-sm border border-pink-50 flex justify-center items-center mb-2 overflow-hidden">
+    <img 
+      src="17.jpg" 
+      alt="S13U 五道式 RO逆滲透" 
+      className="h-40 w-auto object-contain rounded-lg drop-shadow-sm"
+      onError={(e) => { e.target.style.display = 'none'; }} 
+    />
+  </div>
+)}
+
+貼好後，點擊綠色的 **「Commit changes...」** 存檔。
             {priceData[selectedModel].map((item, idx) => (
               <div key={idx} className="bg-white p-4 rounded-2xl shadow-sm border border-pink-50 flex justify-between items-center transition-transform hover:-translate-y-1">
                 <div>
