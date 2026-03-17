@@ -218,10 +218,13 @@
 
       const generateTimeOptions = () => {
         const options = [];
-        for (let h = 9; h <= 20; h++) {
+        for (let h = 9; h <= 19; h++) {
           const hourStr = h < 10 ? `0${h}` : `${h}`;
           options.push(`${hourStr}:00`);
-          options.push(`${hourStr}:30`);
+          // 當時間到 19 點時，就不再產生 19:30 的選項
+          if (h !== 19) {
+            options.push(`${hourStr}:30`);
+          }
         }
         return options;
       };
