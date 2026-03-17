@@ -106,6 +106,12 @@
           { title: 'DF400 第一道前置濾心', desc: '建議半年更換', price: 'NT$ 850', isHot: true },
           { title: 'DF400 第二道RO濾心', desc: '建議兩年更換', price: 'NT$ 3,000', isHot: false },
           { title: 'DF400 第三道後置濾心', desc: '建議一年更換', price: 'NT$ 800', isHot: false },
+        ],
+        UF4: [
+          { title: '第一道濾心PP', desc: '建議半年更換', price: 'NT$ 400', isHot: true },
+          { title: '第二道濾心C1', desc: '建議半年更換', price: 'NT$ 500', isHot: false },
+          { title: '第三道濾心UF', desc: '建議一年更換', price: 'NT$ 1,200', isHot: false },
+          { title: '第四道濾心C2', desc: '建議一年更換', price: 'NT$ 500', isHot: false }
         ]
       };
 
@@ -118,6 +124,7 @@
           <div className="flex bg-pink-50/50 p-1 rounded-xl mb-4">
             <button onClick={() => setSelectedModel('S13U')} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedModel === 'S13U' ? 'bg-white text-pink-500 shadow-sm' : 'text-gray-400 hover:text-pink-400'}`}>五道式Ro逆滲透</button>
             <button onClick={() => setSelectedModel('DF400')} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedModel === 'DF400' ? 'bg-white text-pink-500 shadow-sm' : 'text-gray-400 hover:text-pink-400'}`}>DF400</button>
+            <button onClick={() => setSelectedModel('UF4')} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedModel === 'UF4' ? 'bg-white text-pink-500 shadow-sm' : 'text-gray-400 hover:text-pink-400'}`}>UF4</button>
           </div>
 
           <div className="space-y-3">
@@ -152,6 +159,21 @@
               </div>
             )}
 
+            {/* 🌟 新增：完美的圖片顯示區塊 (UF4) */}
+            {selectedModel === 'UF4' && (
+              <div className="bg-white p-3 rounded-2xl shadow-sm border border-pink-50 flex justify-center items-center mb-2">
+                <img 
+                  src="UF4.jpg" 
+                  alt="UF4 淨水器" 
+                  className="w-full h-auto max-h-48 object-contain rounded-lg drop-shadow-sm"
+                  onError={(e) => { 
+                    /* 如果找不到圖片，就把整個白框框藏起來 */
+                    e.target.parentNode.style.display = 'none'; 
+                  }} 
+                />
+              </div>
+            )}
+
             {priceData[selectedModel].map((item, idx) => (
               <div key={idx} className="bg-white p-4 rounded-2xl shadow-sm border border-pink-50 flex justify-between items-center transition-transform hover:-translate-y-1">
                 <div>
@@ -170,7 +192,7 @@
       const notices = [
         '為了提供最完善的服務，保養請提早至少 3 天預約喔！', 
         '若臨時有事需要更改時間，請於前一日告知我們 ♡', 
-        '技師到府前會先以電話聯繫，請留意手機。', 
+        '師傅到府前會先以電話聯繫，請留意手機。', 
         '希望預約時間重疊或無法前往會另外通知聯絡(建議以平日上班時間早上9點至晚上7點)'
       ];
       return (
@@ -285,6 +307,7 @@
               <option value="" disabled>請選擇您的機器型號</option>
               <option value="五道式Ro逆滲透">五道式Ro逆滲透</option>
               <option value="DF400+">DF400+</option>
+              <option value="UF4">UF4</option>
               <option value="其他機型 / 不確定">其他機型 / 不確定</option>
             </select>
             <div className="grid grid-cols-2 gap-3">
